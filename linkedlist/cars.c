@@ -77,13 +77,27 @@ CarInfo *DeleteCars(CarInfo *cars, char *Brand, int Model)
 	return cars;
 }
 
+const char *get_proto_string(CarProto pt)
+{
+	switch (pt) {
+	case PROTO_USA:
+		return "USA";
+	case PROTO_CHINA:
+		return "CHINA";
+	case PROTO_JAPAN:
+		return "JAPAN";
+	default:
+		return "UNKNOWN";
+	}
+}
+
 void PrintCars(CarInfo *cars)
 {
 	CarInfo *Head;
 	
 	for(Head = cars; Head != NULL; Head = Head->next)
 	{
-		printf("===Brand:[%s] Model:[%d]\n",Head->Brand,Head->Model);
+		printf("===Brand:[%s] Model:[%d] Contry:[%s]\n",Head->Brand,Head->Model,get_proto_string(Head->Contry));
 	}
 }
 
