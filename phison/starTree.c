@@ -1,4 +1,5 @@
 #include <stdio.h>
+//https://goo.gl/zP9bW
 void star()
 {
 	int i,a,b	;
